@@ -30,3 +30,9 @@
                name: Deploy Over SSH
                command: |
                  ssh om@52.172.2.142 "bash -s" -- < demo.sh    #This is for executing shell script on the server
+
+```
+print("HelloWorld")
+
+
+```
