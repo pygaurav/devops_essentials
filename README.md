@@ -8,16 +8,17 @@
 `echo $PASSWORD | sudo docker login -u=$USERNAME--password-stdin <jfrog_server_url>`
 
 ###Upload File to Jfrog:
+
 `curl -X PUT -u $USERNAME:$PASSWORD -T <file_on_local> <full_url_path_on_Jfrog>`
 
 ###Download File to Jfrog:
+
 `wget <full_url_path_on_Jfrog>  --user=$USERNAME --password=$PASSWORD`
 
 
 ##CIRCLE CI Essentails
 
-`
-version: 2.1
+`version: 2.1
 jobs:
   build:
     machine:      # This is needed for executing the machine 
@@ -28,6 +29,4 @@ jobs:
        - run:
            name: Deploy Over SSH
            command: |
-             ssh USER@SERVER "bash -s" -- < demo.sh    #This is for executing shell script on the server
-
-`
+             ssh USER@SERVER "bash -s" -- < demo.sh    #This is for executing shell script on the server`
